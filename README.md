@@ -1,0 +1,1 @@
+# AWS SQS starter example
