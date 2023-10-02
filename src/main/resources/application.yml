@@ -1,0 +1,13 @@
+server:
+  port: 8000
+
+aws:
+  sqs:
+    enabled: true
+    queues:
+      - name: MyQueueTest
+        alias: myQueueTest
+        max-number-of-messages: 5
+        wait-time-seconds: 20
+        region: us-east-1
+
