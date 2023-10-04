@@ -1,5 +1,6 @@
 package com.example.aws.sqs.starter.example.job;
 
+import com.example.starter.aws.sqs.aws.model.AwsMessage;
 import com.example.starter.aws.sqs.client.AwsSqsTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -20,9 +21,9 @@ public class MessageJob {
 
     @Scheduled(cron = "0/10 * *  * * ?")
     public void handleMessage() {
-        List<Message> messageList = myQueueTestAwsSqsTemplate.receiveMessages();
-        for (Message message: messageList) {
-            System.out.println(message.body());
+        List<AwsMessage> messageList = myQueueTestAwsSqsTemplate.receiveMessages();
+        for (AwsMessage message: messageList) {
+            System.out.println(message.getBody());
             myQueueTestAwsSqsTemplate.deleteMessage(message);
         }
     }

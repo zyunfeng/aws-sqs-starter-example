@@ -9,5 +9,5 @@ aws:
         alias: myQueueTest
         max-number-of-messages: 5
         wait-time-seconds: 20
-        region: us-east-1
+    region:  us-east-1
 
